@@ -30,16 +30,28 @@
             {
                 <p>You are finnished!</p>
             }
-            <button class="btn btn-primary" @onclick="IncrementCount">+</button>
             <button class="btn btn-primary" @onclick="DecreaseCount">-</button>
+            <button class="btn btn-primary" @onclick="IncrementCount">+</button>
         </section>
 
-        <section class="section-accent" aria-labelledby="increment-heading">
+        <section class="section-accent">
             <p>Set increments</p>
-            <button class="btn btn-secondary" @onclick="() => IncrementAmount = 1">1</button>
-            <button class="btn btn-secondary" @onclick="() => IncrementAmount = 2">2</button>
-            <button class="btn btn-secondary" @onclick="() => IncrementAmount = 5">5</button>
-            <button class="btn btn-secondary" @onclick="() => IncrementAmount = 10">10</button>
+            <button class="yarn-btn" @onclick="() => IncrementAmount = 1">
+                <div class="yarn-icon"></div>
+                <span class="yarn-btn-text">1</span>
+            </button>
+            <button class="yarn-btn" @onclick="() => IncrementAmount = 2">
+                <div class="yarn-icon"></div>
+                <span class="yarn-btn-text">2</span>
+            </button>
+            <button class="yarn-btn" @onclick="() => IncrementAmount = 5">
+                <div class="yarn-icon"></div>
+                <span class="yarn-btn-text">5</span>
+            </button>
+            <button class="yarn-btn" @onclick="() => IncrementAmount = 10">
+                <div class="yarn-icon"></div>
+                <span class="yarn-btn-text">10</span>
+            </button>
         </section>
     </div>
 </div>
