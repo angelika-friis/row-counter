@@ -3,11 +3,22 @@
     --panel: #ffffff;           /* panel / kort */
     --border: #dcd6cf;
     --divider: #eae5df;
+    --bg: #f6f1e9;
+
+    --card: #ffffff;
+
+    --main: #ece4ff;              /* huvudsektion – mild lavendel */
+    --main-shadow: rgba(150, 130, 255, 0.2);
+
+    --subtle: #faf8f3;            /* ljus varm */
+    --neutral: #f4f1ea;           /* mindre dominant */
+    --accent: #f0eaff;            /* svag lavendel */
 
     --text: #3a3734;
 
     --primary: #a48bff;         /* mjuk lavendel */
     --primary-dark: #846dce;
+    --primary-darker: rgb(112, 92, 175);
 
     --secondary: #e8e0ff;       /* ljus lavendel */
     --secondary-dark: #d5c9fb;
@@ -41,6 +52,9 @@ section {
     padding-bottom: 1.5rem;
     margin-bottom: 1.5rem;
     border-bottom: 1px solid var(--divider);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 /* Sista sektionen ska inte ha linje */
@@ -59,7 +73,7 @@ h2, h3 {
 
 /* Input */
 input[type="number"] {
-    max-width: 200px;
+    max-width: 75px;
     background: white;
     border: 1px solid var(--border);
     border-radius: 10px;
@@ -71,8 +85,6 @@ input[type="number"] {
 button.btn {
     border-radius: 12px;
     padding: 0.5rem 1rem;
-    margin-top: 0.5rem;
-    margin-right: 0.5rem;
     font-weight: 500;
 }
 
@@ -130,7 +142,7 @@ p[role="alert"] {
 }
 
 .yarn-btn:hover {
-    color: var(--primary);;
+    color: var(--primary-darker);;
 }
 
 .yarn-btn-text {
@@ -152,5 +164,41 @@ p[role="alert"] {
 }
 
 .yarn-icon:hover {
-    background-color: var(--primary);
+    background-color: var(--primary-darker);
+}
+
+.progress {
+    width: 100%;
+    height: 16px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.progress-fill {
+    height: 100%;
+    transition: width 0.4s ease;
+}
+
+.striped {
+    background-color: var(--secondary);
+    background-image: repeating-linear-gradient(
+        45deg,
+        #ffffff 0,
+        #ffffff 10px,
+        var(--secondary) 10px,
+        var(--secondary) 20px
+    );
+}
+
+.btn-group {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.main-section {
+    display: flex;
+    justify-content: center;
 }
