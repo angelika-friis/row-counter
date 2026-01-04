@@ -1,3 +1,20 @@
+@font-face {
+  font-family: "BlueWinter";
+  src: url("/fonts/blue-winter-font/BlueWinter-rv1oy.ttf") format("trueType"),
+       url("/fonts/blue-winter-font/BlueWinter-Yq9DO.otf") format("openType");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SleeklySara";
+  src: url("/fonts/bad-unicorn-font/BadUnicornDemoRegular-BVWx.ttf") format("trueType");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
     --bg: #f5efe6;              /* varm beige bakgrund */
     --panel: #ffffff;           /* panel / kort */
@@ -18,7 +35,7 @@
 
     --primary: #a48bff;         /* mjuk lavendel */
     --primary-dark: #846dce;
-    --primary-darker: rgb(112, 92, 175);
+    --primary-darker: #705caf;
 
     --secondary: #e8e0ff;       /* ljus lavendel */
     --secondary-dark: #d5c9fb;
@@ -26,14 +43,9 @@
     --focus: #c6a8ff;           /* tydlig men varm highlight */
 }
 
-/* Hel sida centrerad */
-.page-wrapper {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--bg);
-    padding: 2rem;
+body {
+  margin: 0;
+  background: var(--bg);
 }
 
 /* Hela kortet */
@@ -55,6 +67,12 @@ section {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    align-items: center;
+}
+
+.main-section {
+    display: flex;
+    justify-content: center;
 }
 
 /* Sista sektionen ska inte ha linje */
@@ -67,8 +85,23 @@ section:last-of-type {
 /* Rubriker */
 h2, h3 {
     font-weight: 600;
-    margin-bottom: 0.75rem;
     color: var(--text);
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: var(--primary-dark);
+    text-decoration: underline;
 }
 
 /* Input */
@@ -99,6 +132,10 @@ button.btn {
     background-color: var(--primary-dark);
 }
 
+.btn-primary:active {
+    background-color: var(--primary-darker);
+}
+
 /* Sekundära knappar */
 .btn-secondary {
     background-color: var(--secondary);
@@ -108,19 +145,31 @@ button.btn {
 .btn-secondary:hover,
 .btn-secondary:focus {
     background-color: var(--secondary-dark);
+    border-color: var(--secondary);
+}
+
+button[role="restart"] {
+    padding: 0.25rem;
+    width: 44px;
+    height: 44px;
+    align-self: end;
+    margin-bottom: -30px;
 }
 
 /* Fokusmarkering */
+h1:focus,
+a:focus,
 button:focus,
 input:focus {
     outline: 3px solid var(--focus);
-    outline-offset: 3px;
+    outline-offset: 4px;
 }
 
 /* Status */
 p[role="status"] {
-    font-size: 1.1rem;
+    font-size: 2rem;
     font-weight: 600;
+    line-height: 80%;
 }
 
 /* Alert-meddelande */
@@ -129,8 +178,13 @@ p[role="alert"] {
     border: 1px solid var(--secondary-dark);
     padding: 0.75rem;
     border-radius: 10px;
-    margin-top: 1rem;
     font-weight: 600;
+}
+
+@media screen and (max-width: 480px){
+    .yarn-btn-group {
+        flex-wrap: wrap;
+    }
 }
 
 .yarn-btn {
@@ -196,9 +250,12 @@ p[role="alert"] {
     display: flex;
     gap: 0.5rem;
     justify-content: center;
+    width: 100%;
 }
 
-.main-section {
+.inline-row {
     display: flex;
+    align-items: center;
     justify-content: center;
+    gap: 0.75rem;
 }
