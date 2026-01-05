@@ -157,12 +157,15 @@ button[role="restart"] {
 }
 
 /* Fokusmarkering */
-h1:focus,
 a:focus,
 button:focus,
 input:focus {
     outline: 3px solid var(--focus);
     outline-offset: 4px;
+}
+
+h1:focus {
+    outline: none;
 }
 
 /* Status */
@@ -259,3 +262,14 @@ p[role="alert"] {
     justify-content: center;
     gap: 0.75rem;
 }
+
+.loading-progress-text {
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    inset: calc(20vh + 3.25rem) 0 auto 0.2rem;
+}
+
+    .loading-progress-text:after {
+        content: var(--blazor-load-percentage-text, "Loading");
+    }
