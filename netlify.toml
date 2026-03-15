@@ -1,5 +1,5 @@
 [build]
-  command = "dotnet publish BlazorApp/BlazorApp.csproj -c Release -o publish"
+  command = "dotnet publish BlazorApp.csproj -c Release -o publish"
   publish = "publish/wwwroot"
 
 [build.environment]
